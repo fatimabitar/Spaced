@@ -55,7 +55,6 @@ header .btn:last-child:hover {
   background-color: #298ddc;
   color: var(--white);
 }
-
 .btn-container {
   margin-bottom: 40rem;
 }
@@ -82,8 +81,8 @@ header .btn:last-child:hover {
   position: absolute;
   bottom: 20%;
   right: -10%;
-  width: 60rem;
   z-index: 2;
+  width: 60rem;
 }
 .bg-circle2 {
   position: absolute;
@@ -304,6 +303,16 @@ header .step .lead {
   position: absolute;
   border-radius:50%;
 }
+.people-nearby .bg-circle5 {
+  width: 55rem;
+  height: 55rem;
+  background-color: #ddd;
+  opacity: 1;
+  right: -8%;
+  position: absolute;
+  z-index: -1;
+  border-radius:50%;
+}
 .people-nearby .screen-1 {
   width: 32rem;
   height: 60rem;
@@ -339,6 +348,16 @@ header .step .lead {
   position: absolute;
   border-radius:50%;
 }
+.taking-control .bg-circle6 {
+  width: 55rem;
+  height: 55rem;
+  background-color: #ddd;
+  opacity: 1;
+  left: -8%;
+  position: absolute;
+  border-radius:50%;
+  z-index: -1;
+}
 
 .taking-control .screen-2 {
   width: 32rem;
@@ -353,6 +372,7 @@ header .step .lead {
   position: absolute;
   left: -15%;
   top: -1%;
+  z-index: 3;
 }
 /* Image slider */
 .images-slider {
@@ -361,6 +381,10 @@ header .step .lead {
   z-index: -1;
   width: 100%;
   overflow: hidden;
+  will-change: transform;
+  transform-origin: center;
+  perspective-origin: center;
+  transition: all 3s ease-in-out;
 }
 .scrolling-thumbs-wrap {
   z-index: 3;
@@ -370,14 +394,14 @@ header .step .lead {
 .column-1,
 .column-2 {
   flex-direction: column;
-  width: 40rem;
+  width: 25rem;
   height: 45rem;
 }
 
 .parallax-image {
-  width: 15rem;
-  height: 35rem;
-  margin: 10px 20px;
+  width: 17rem;
+  height: 30rem;
+  margin-bottom: 10px;
   border-radius: 1.5vw;
   box-shadow: 4px 21px 20px 0 rgba(0, 0, 0, 0.4);
   display: inline-block;
