@@ -395,7 +395,7 @@ header .step .lead {
 .column {
   flex-direction: column;
   width: 25rem;
-  height: 45rem;
+  height: 44rem;
 }
 
 .parallax-image {
