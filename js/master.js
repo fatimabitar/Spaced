@@ -8,8 +8,3 @@ window.onscroll = () => {
     headerEl.style.backgroundColor = "#5459bf";
   }
 };
-
-// window.addEventListener("scroll", (event) => {
-//   let scroll = this.scrollY;
-//   console.log(scroll)
-// });

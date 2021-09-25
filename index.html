@@ -46,7 +46,7 @@
       <div class="container">
         <div class="content pt-10 position-relative">
           <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-12 col-sm-12">
               <h5 class="small-heading text-uppercase pb-3">
                 keep your distance
               </h5>
@@ -71,28 +71,28 @@
                 </a>
               </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 position-relative">
+            <div class="col-lg-6 col-md-12 col-sm-12 position-relative">
               <div class="bg-circle"></div>
               <img src="images/mobile-1.png" alt="" class="mobile-img-1" />
               <lottie-player
                 src="https://uploads-ssl.webflow.com/5ebc456382a07e6fa48a4ea7/5ebed222cf6b3474d2de12c9_Phone-5-15.json"
                 background="transparent"
                 id="firstLottie"
-                speed="1"
+                speed=".5"
                 style="width: 600px; height: 850px"
               ></lottie-player>
             </div>
           </div>
           <div class="how-it-works">
             <div class="row">
-              <div class="col-lg-7 col-md-7 col-sm-12">
+              <div class="col-lg-7 col-md-12 col-sm-12">
                 <div class="bg-circle2"></div>
                 <img src="images/mobile-2.png" alt="" class="mobile-img-2" />
                 <img src="images/person-1.png" alt="" class="small-img1" />
                 <img src="images/person-2.png" alt="" class="small-img2" />
                 <img src="images/person-3.png" alt="" class="small-img3" />
               </div>
-              <div class="col-lg-5 col-md-5 col-sm-12">
+              <div class="col-lg-5 col-md-12 col-sm-12">
                 <h5 class="small-heading text-uppercase pb-3">How it works</h5>
                 <h1 class="pb-3 text-capitalize">
                   getting started is fast & easy
@@ -257,37 +257,37 @@
     <!-- Sliding Images -->
     <section class="images-slider position-relative mb-20">
       <div class="scrolling-thumbs-wrap d-flex">
-        <div class="column-1 d-flex">
+        <div class="column d-flex">
           <img src="images/slider-1.jpg" alt="" class="parallax-image" />
           <img src="images/screen-6.png" alt="" class="parallax-image" />
           <img src="images/screen-4.jpeg" alt="" class="parallax-image" />
         </div>
-        <div class="column-2 d-flex">
+        <div class="column d-flex">
           <img src="images/slider-2.jpg" alt="" class="parallax-image" />
           <img src="images/slider-3.jpeg" alt="" class="parallax-image" />
           <img src="images/screen-3.jpg" alt="" class="parallax-image" />
         </div>
-        <div class="column-1 d-flex">
+        <div class="column d-flex">
           <img src="images/screen-1.jpeg" alt="" class="parallax-image" />
           <img src="images/screen-2.jpg" alt="" class="parallax-image" />
           <img src="images/screen-5.png" alt="" class="parallax-image" />
         </div>
-        <div class="column-2 d-flex">
+        <div class="column d-flex">
           <img src="images/screen-5.png" alt="" class="parallax-image" />
           <img src="images/screen-4.jpeg" alt="" class="parallax-image" />
           <img src="images/screen-4.jpeg" alt="" class="parallax-image" />
         </div>
-        <div class="column-1 d-flex">
+        <div class="column d-flex">
           <img src="images/slider-3.jpeg" alt="" class="parallax-image" />
           <img src="images/screen-3.jpg" alt="" class="parallax-image" />
-          <img src="images/screen-3.png" alt="" class="parallax-image" />
+          <img src="images/screen-3.jpg" alt="" class="parallax-image" />
         </div>
-        <div class="column-2 d-flex">
+        <div class="column d-flex">
           <img src="images/screen-2.jpg" alt="" class="parallax-image" />
           <img src="images/screen-1.jpeg" alt="" class="parallax-image" />
-          <img src="images/screen-4.png" alt="" class="parallax-image" />
+          <img src="images/screen-6.png" alt="" class="parallax-image" />
         </div>
-        <div class="column-1 d-flex">
+        <div class="column d-flex">
           <img src="images/slider-4.jpeg" alt="" class="parallax-image" />
           <img src="images/screen-4.jpeg" alt="" class="parallax-image" />
           <img src="images/screen-6.png" alt="" class="parallax-image" />
@@ -392,19 +392,17 @@
       const controller = new ScrollMagic.Controller();
       const scene = new ScrollMagic.Scene({
         triggerElement: "header",
-        duration: 2000,
+        duration: 1500,
         triggerHook: 0,
       })
         .setTween(
-          gsap.to("#firstLottie", 2, { x: -850, y: 800, ease: Power1.easeOut })
+          gsap.to("#firstLottie", 0.5, {
+            x: -750,
+            y: 800,
+            ease: Power1.easeOut,
+          })
         )
         .addTo(controller);
-      const firstTL = gsap.timeline({
-        defaults: { duration: 1 },
-        markers: true,
-        start: "+=133 80%",
-        end: "+=200 40%",
-      });
 
       //Background Circle
       const controller2 = new ScrollMagic.Controller();
@@ -436,40 +434,30 @@
       const scene4 = new ScrollMagic.Scene({
         triggerElement: ".images-slider",
         duration: 100,
-        triggerHook: 0.5,
+        triggerHook: 1,
       })
         .setTween(
-          gsap.to(".scrolling-thumbs-wrap", 0.5, {
-            rotation: "10deg",
+          gsap.to(".scrolling-thumbs-wrap", 0.1, {
+            rotation: "5deg",
             ease: Power4.easeIn,
           })
         )
         .addTo(controller4);
 
-      //   tl.from(".column-1", {
-      //     trigger:'.scrolling-thumbs-wrap',
-      //   ease: Power4.easeIn,
-      //   y: 150,
-      // }).to(".column-1", {
-      //   ease: Power4.easeOut,
-      //   y: -100,
-      // });
       //New Image Slider
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: "scrolling-thumbs-wrap",
-          start: "2000",
+          trigger: "taking-control .lead",
+          start: "top",
           end: "bottom bottom",
           scrub: 0.5,
         },
-        duration: 0.5,
+        duration: 2,
       });
-      
-      tl.fromTo('.column-2', {y:0},{y:-200}, 0)
-      tl.from(".column-2", {
+      tl.from(".column", {
         ease: Power3.easeIn,
-        y: 100,
-      }).to(".column-2", {
+        y: 50,
+      }).to(".column", {
         ease: Power3.easeOut,
         y: -200,
       });
@@ -514,12 +502,6 @@
         dalay: 0.2,
         ease: Power1.easeIn,
         duration: 1,
-      });
-      gsap.to(".share .btn", {
-        scrollTrigger: ".share",
-        backgroundColor: "fe5a59",
-        dalay: 4,
-        ease: Power1.easeIn,
       });
     </script>
   </body>

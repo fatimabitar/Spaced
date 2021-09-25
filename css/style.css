@@ -77,7 +77,7 @@ header .btn:last-child:hover {
   z-index: 2;
   display: none;
 }
-#firstLottie{
+#firstLottie {
   position: absolute;
   bottom: 20%;
   right: -10%;
@@ -230,50 +230,51 @@ header .step .lead {
 }
 .person {
   width: 11rem;
-  z-index: 5;
 }
 .person-1 {
   position: absolute;
   left: 15%;
   top: 3%;
+  z-index: 5;
 }
 .person-2 {
   width: 10rem;
   position: absolute;
-  left: 0%;
+  left: 15%;
   bottom: -40%;
-}
-.person-2 {
-  position: absolute;
-  left: 22%;
-  bottom: -40%;
+  z-index: 5;
 }
 .person-3 {
   width: 14rem;
   position: absolute;
   left: 33%;
   top: 20%;
+  z-index: 5;
 }
 .person-4 {
   position: absolute;
   left: 48%;
   bottom: -20%;
+  z-index: 5;
 }
 .person-5 {
   position: absolute;
   right: 30%;
   top: 20%;
+  z-index: 5;
 }
 .person-6 {
   position: absolute;
   right: 15%;
   top: 3%;
+  z-index: 5;
 }
 .person-7 {
   width: 12rem;
   position: absolute;
   right: 22%;
   bottom: -40%;
+  z-index: 5;
 }
 /* People nearby */
 .people-nearby .small-heading,
@@ -301,7 +302,7 @@ header .step .lead {
   opacity: 1;
   right: -8%;
   position: absolute;
-  border-radius:50%;
+  border-radius: 50%;
 }
 .people-nearby .bg-circle5 {
   width: 55rem;
@@ -311,7 +312,7 @@ header .step .lead {
   right: -8%;
   position: absolute;
   z-index: -1;
-  border-radius:50%;
+  border-radius: 50%;
 }
 .people-nearby .screen-1 {
   width: 32rem;
@@ -346,7 +347,7 @@ header .step .lead {
   opacity: 1;
   left: -8%;
   position: absolute;
-  border-radius:50%;
+  border-radius: 50%;
 }
 .taking-control .bg-circle6 {
   width: 55rem;
@@ -355,7 +356,7 @@ header .step .lead {
   opacity: 1;
   left: -8%;
   position: absolute;
-  border-radius:50%;
+  border-radius: 50%;
   z-index: -1;
 }
 
@@ -391,8 +392,7 @@ header .step .lead {
   width: auto;
   flex-wrap: nowrap;
 }
-.column-1,
-.column-2 {
+.column {
   flex-direction: column;
   width: 25rem;
   height: 45rem;
@@ -401,7 +401,7 @@ header .step .lead {
 .parallax-image {
   width: 17rem;
   height: 30rem;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border-radius: 1.5vw;
   box-shadow: 4px 21px 20px 0 rgba(0, 0, 0, 0.4);
   display: inline-block;
