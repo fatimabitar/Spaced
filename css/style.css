@@ -79,10 +79,10 @@ header .btn:last-child:hover {
 }
 #firstLottie {
   position: absolute;
-  bottom: 20%;
+  bottom: 22%;
   right: -10%;
-  z-index: 2;
-  width: 60rem;
+  z-index: 3;
+  /* width: 60rem; */
 }
 .bg-circle2 {
   position: absolute;

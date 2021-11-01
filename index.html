@@ -40,11 +40,11 @@
   <body>
     <!-- Start of header -->
     <header>
-      <div class="logo-container">
+      <div class="logo-container pb-3">
         <img src="images/Logo.png" alt="" class="logo" />
       </div>
       <div class="container">
-        <div class="content pt-10 position-relative">
+        <div class="content pt-5 position-relative">
           <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12">
               <h5 class="small-heading text-uppercase pb-3">
@@ -78,8 +78,9 @@
                 src="https://uploads-ssl.webflow.com/5ebc456382a07e6fa48a4ea7/5ebed222cf6b3474d2de12c9_Phone-5-15.json"
                 background="transparent"
                 id="firstLottie"
-                speed=".5"
-                style="width: 600px; height: 850px"
+                speed="1"
+                loop
+                style="width: 600px; height: 800px"
               ></lottie-player>
             </div>
           </div>
@@ -354,155 +355,22 @@
         </div>
       </div>
     </footer>
-    <script src="js/master.js"></script>
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Scroll Magic -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
     <!-- Lottie animation web player -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
     <script>
-      LottieInteractivity.create({
-        mode: "scroll",
-        player: "#firstLottie",
-        actions: [
-          {
-            visibility: [0, 1],
-            type: "seek",
-            frames: [0, 300],
-          },
-        ],
-      });
+      
     </script>
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/plugins/CSSPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"></script>
-    <script>
-      //Phone rotation on scroll
-      const controller = new ScrollMagic.Controller();
-      const scene = new ScrollMagic.Scene({
-        triggerElement: "header",
-        duration: 1500,
-        triggerHook: 0,
-      })
-        .setTween(
-          gsap.to("#firstLottie", 0.5, {
-            x: -750,
-            y: 800,
-            ease: Power1.easeOut,
-          })
-        )
-        .addTo(controller);
 
-      //Background Circle
-      const controller2 = new ScrollMagic.Controller();
-      const scene2 = new ScrollMagic.Scene({
-        triggerElement: "header",
-        duration: 1000,
-        triggerHook: 0,
-      })
-        .setTween(TweenMax.to(".bg-circle", 1, { scale: 0.2, opacity: 0 }))
-        .addTo(controller2);
-
-      const controller3 = new ScrollMagic.Controller();
-      const scene3 = new ScrollMagic.Scene({
-        triggerElement: "header",
-        duration: 1000,
-        triggerHook: 0,
-      })
-        .setTween(
-          TweenMax.from(
-            ".bg-circle2, .small-img1 , .small-img2 ,.small-img3",
-            1,
-            { scale: 0, opacity: 0.1 }
-          )
-        )
-        .addTo(controller3);
-
-      //Image Slider
-      const controller4 = new ScrollMagic.Controller();
-      const scene4 = new ScrollMagic.Scene({
-        triggerElement: ".images-slider",
-        duration: 100,
-        triggerHook: 1,
-      })
-        .setTween(
-          gsap.to(".scrolling-thumbs-wrap", 0.1, {
-            rotation: "5deg",
-            ease: Power4.easeIn,
-          })
-        )
-        .addTo(controller4);
-
-      //New Image Slider
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "taking-control .lead",
-          start: "top",
-          end: "bottom bottom",
-          scrub: 0.5,
-        },
-        duration: 2,
-      });
-      tl.from(".column", {
-        ease: Power3.easeIn,
-        y: 50,
-      }).to(".column", {
-        ease: Power3.easeOut,
-        y: -200,
-      });
-      //Background Circle
-      gsap.from(
-        ".bg-circle3, .people-nearby .screen-1,  .notification-1, .notification-2",
-        {
-          scrollTrigger: ".people-nearby",
-          scale: 0,
-          ease: Power4.easeIn,
-          duration: 1,
-        }
-      );
-      gsap.from(
-        ".bg-circle4, .taking-control .screen-2, .taking-control .notification-1",
-        {
-          scrollTrigger: ".taking-control",
-          scale: 0,
-          ease: Power4.easeIn,
-          duration: 1,
-        }
-      );
-
-      //Image and text reveal on scroll
-      gsap.from(".right", {
-        scrollTrigger: ".share",
-        x: 100,
-        ease: Power1.easeIn,
-        duration: 1,
-      });
-      gsap.from(".left", {
-        scrollTrigger: ".share",
-        x: -100,
-        ease: Power1.easeIn,
-        duration: 1,
-      });
-      gsap.from(".stagger", {
-        scrollTrigger: ".share",
-        y: -100,
-        opacity: 0,
-        stagger: 0.2,
-        dalay: 0.2,
-        ease: Power1.easeIn,
-        duration: 1,
-      });
-    </script>
+    <!-- Scroll Magic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
+    <script src="js/master.js"></script>
   </body>
 </html>
