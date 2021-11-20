@@ -10,17 +10,17 @@ window.onscroll = () => {
 };
 
 //setting up Lottie interactivity on scroll
-LottieInteractivity.create({
-  mode: "scroll",
-  player: "#firstLottie",
-  actions: [
-    {
-      visibility: [0, 1],
-      type: "seek",
-      frames: [0, 300],
-    },
-  ],
-});
+// LottieInteractivity.create({
+//   mode: "scroll",
+//   player: "#firstLottie",
+//   actions: [
+//     {
+//       visibility: [0, 1],
+//       type: "seek",
+//       frames: [0, 25],
+//     },
+//   ],
+// });
 
 //Phone Rotation on scroll
 const controller = new ScrollMagic.Controller();
@@ -32,7 +32,7 @@ const scene = new ScrollMagic.Scene({
   .setTween(
     gsap.to("#firstLottie", 0.5, {
       x: -750,
-      y: 900,
+      y: 850,
       ease: Power1.easeIn,
     })
   )
@@ -50,17 +50,18 @@ const scene2 = new ScrollMagic.Scene({
 
 const controller3 = new ScrollMagic.Controller();
 const scene3 = new ScrollMagic.Scene({
-  triggerElement: "header",
+  triggerElement: ".how-it-works",
   duration: 1000,
-  triggerHook: 0,
+  triggerHook: 1,
 })
-  .setTween(
-    TweenMax.from(".bg-circle2, .small-img1 , .small-img2 ,.small-img3", 1, {
-      scale: 0,
-      opacity: 0.1,
-    })
-  )
+  .setTween(TweenMax.from(".bg-circle2", 1, { scale: 0.2, opacity: 0 }))
   .addTo(controller3);
+
+const scene5 = new ScrollMagic.Scene({
+  triggerElement:"header .lead",
+  duration: 1000,
+  triggerHook:0
+}).setTween(TweenMax.from(".small-img1 , .small-img2 ,.small-img3",1,{scale:0.2,opacity:0})).addTo(controller3)
 
 //Image Slider
 const controller4 = new ScrollMagic.Controller();
@@ -109,7 +110,7 @@ gsap.from(
   {
     scrollTrigger: ".taking-control",
     scale: 0,
-    ease: Power4.easeIn,
+    ease: Power1.easeIn,
     duration: 1,
   }
 );
